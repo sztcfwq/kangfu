@@ -1,0 +1,18 @@
+program kfzx;
+
+uses
+  Forms,
+  Umain in 'Umain.pas' {frm_main},
+  udljm in 'udljm.pas' {frm_dl},
+  usjmk in 'usjmk.pas' {dm: TDataModule},
+  uxmsz in 'uxmsz.pas' {frm_ts};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(Tfrm_main, frm_main);
+  Application.CreateForm(Tdm, dm);
+  Application.CreateForm(Tfrm_dl, frm_dl);
+  Application.Run;
+end.

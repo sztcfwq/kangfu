@@ -1,0 +1,43 @@
+object pprpt: TppReport
+  AutoStop = False
+  DataPipeline = ppline
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Letter Transverse'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 100000
+  PrinterSetup.mmPaperWidth = 216000
+  PrinterSetup.PaperSize = 256
+  SaveAsTemplate = True
+  Template.FileName = 'tj_zlrc'
+  Template.Format = ftASCII
+  Units = utMillimeters
+  DeviceType = 'Printer'
+  ModalCancelDialog = False
+  ModalPreview = False
+  ShowAutoSearchDialog = True
+  Left = 344
+  Top = 216
+  Version = '6.02'
+  mmColumnWidth = 0
+  DataPipelineName = 'ppline'
+  object ppHeaderBand1: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 15346
+    mmPrintPosition = 0
+  end
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+  end
+  object ppFooterBand1: TppFooterBand
+    mmBottomOffset = 0
+    mmHeight = 0
+    mmPrintPosition = 0
+  end
+end

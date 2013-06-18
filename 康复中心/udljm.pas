@@ -1,0 +1,204 @@
+unit udljm;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, ExtCtrls ,registry;
+
+type
+  Tfrm_dl = class(TForm)
+    Image1: TImage;
+    Label1: TLabel;
+    GroupBox1: TGroupBox;
+    bbt_dl: TBitBtn;
+    bbt_qx: TBitBtn;
+    StaticText1: TStaticText;
+    StaticText2: TStaticText;
+    StaticText3: TStaticText;
+    StaticText4: TStaticText;
+    edt_zgdm: TEdit;
+    edt_zgxm: TEdit;
+    edt_gzmm: TEdit;
+    procedure bbt_qxClick(Sender: TObject);
+    procedure edt_zgdmKeyPress(Sender: TObject; var Key: Char);
+    procedure edt_gzmmKeyPress(Sender: TObject; var Key: Char);
+    procedure bbt_dlClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_dl: Tfrm_dl;
+  function Decrypt(const S: shortString; Key: Word): shortString; external 'crpt.dll';
+  function Encrypt(const S: shortString; Key: Word): shortString; external 'crpt.dll';
+
+implementation
+
+uses usjmk;
+
+{$R *.dfm}
+
+procedure Tfrm_dl.bbt_qxClick(Sender: TObject);
+begin
+//关闭窗口
+ // close;
+ application.Terminate;
+end;
+
+procedure Tfrm_dl.edt_zgdmKeyPress(Sender: TObject; var Key: Char);
+var
+  zgdm:string;
+begin
+//根据回车判断 从数据库中选择姓名，密码
+//实现跳转
+  zgdm:=trim(edt_zgdm.Text);
+  if key=#13 then
+  begin
+    dm.fq.Close;
+    dm.fq.SQL.Clear;
+    dm.fq.SQL.Add('select xm from czryk where gh=:agh and sscjxh in(1,999)');
+    dm.fq.Parameters.ParamByName('agh').Value :=zgdm;
+    dm.fq.Prepared :=true;
+    dm.fq.open;
+    if dm.fq.RecordCount <=0 then
+    begin
+      messagebox(self.handle,pchar('职工代码:['+zgdm+']不存在！'),'登录',MB_ICONERROR);
+      edt_zgdm.SelectAll;
+      edt_zgdm.SetFocus;
+      exit;
+    end;
+    edt_zgxm.Text :=dm.fq.fieldbyname('xm').AsString;
+    edt_gzmm.SetFocus;
+  end;
+end;
+
+procedure Tfrm_dl.edt_gzmmKeyPress(Sender: TObject; var Key: Char);
+begin
+//实现跳转
+  if key=#13 then
+  begin
+    key:=#0;
+    bbt_dl.SetFocus;
+  end;
+end;
+
+procedure Tfrm_dl.bbt_dlClick(Sender: TObject);
+var
+  jmgh,jmmm,sjkmm,zjmm:string;
+begin
+//调用dll计算密码值
+//判断密码 ，显示提示
+  jmgh:=trim(edt_zgdm.Text);
+  jmmm:=trim(edt_gzmm.Text);
+  dm.fq.Close;
+  dm.fq.SQL.Clear;
+  dm.fq.SQL.Add('select kl from czryk where gh=:agh');
+  dm.fq.Parameters.ParamByName('agh').Value :=jmgh;
+  dm.fq.Prepared :=true;
+  dm.fq.Open;
+  sjkmm:=trim(dm.fq.fieldbyname('kl').AsString);
+  zjmm:=decrypt(sjkmm,111);
+  if (jmmm=zjmm) then
+  begin
+//    messagebox(self.handle,'密码正确，欢迎登录！','登录',MB_ICONASTERISK);
+    self.close;
+  end
+  else
+  begin
+    messagebox(self.handle,'密码不正确，请检查！','登录',MB_ICONERROR);
+    edt_gzmm.SelectAll;
+    edt_gzmm.SetFocus;
+  end;
+end;
+
+procedure Tfrm_dl.FormShow(Sender: TObject);
+var
+  f:textfile;
+  filepath,filename,shis,sother,conhis,conother:string;
+  conf:string;
+begin
+//以上方法弃用，改为下面的方法
+  filename :='kfzx.ini';
+  filepath:=Extractfilepath(application.ExeName);
+  if not fileexists(filepath+filename) then
+  begin
+     Assignfile(f,filepath+filename);
+     rewrite(f);
+     writeln(f,Encrypt('Password=sacseyhis;Persist Security Info=True;User ID=sa;Initial Catalog=THIS4DB;Data Source=zx-db15',222));
+     writeln(f,Encrypt('Password=123;Persist Security Info=True;User ID=bagl;Initial Catalog=yyother;Data Source=zx-db16',222));
+     closefile(f);
+  end;
+  conf:='Provider=SQLOLEDB.1;';
+  Assignfile(f,filepath+filename);
+  reset(f);
+  readln(f,shis);
+  conhis:=decrypt(shis,222);
+  readln(f,sother);
+  conother:=decrypt(sother,222);
+  dm.acon_this4.ConnectionString :=conf+conhis;
+  dm.adocon.ConnectionString :=conf+conother;
+ // showmessage(conf+conhis);
+ // showmessage(conf+conother);
+  dm.acon_this4.Connected :=true;
+  dm.adocon.Connected :=true;
+  closefile(f);
+{var
+//登录信息写入注册表，然后从注册表中读取数据设置并联接数据库
+  reg:tregistry;
+  ppassword,puser,pserver,pdatabase,constring:string;
+begin
+  //首先联接数据库，出错提示等。
+  //联接到数据库的用户名，密码，服务器名称均由系统设置产生，从注册表中读入。
+  reg:=tregistry.Create;
+  reg.rootkey:=Hkey_local_machine;
+  if not reg.OpenKey('software\fzbg',false)  then
+  begin
+    try
+      Reg.RootKey:=HKey_Local_Machine; // Section to look for within the registry
+      if Reg.OpenKey('\Software\fzbg',true) then
+      begin
+        reg.WriteString('server','CSEY');
+        reg.WriteString('user','sa');
+        reg.WriteString('password','sa');
+        reg.WriteString('database','yyother');
+        reg.CloseKey;
+      end;
+    except
+      on e:exception do
+      begin
+        showmessage('注册表写错误，请确认是否有权限！');
+        exit;
+      end;
+    end;
+  end;
+  reg.OpenKey('software\fzbg',false);
+  ppassword :=reg.ReadString('password');
+  puser :=reg.ReadString('user');
+  pserver :=reg.ReadString('server');
+  pdatabase:=reg.ReadString('database');
+  constring :='Provider=SQLOLEDB.1;';
+  constring :=constring + 'password='+ppassword+';';
+  constring :=constring + 'Persist Security Info=True;';
+  constring :=constring + 'User ID='+puser+';';
+  constring :=constring + 'Initial Catalog='+pdatabase+';';
+  constring :=constring + 'Data Source='+pserver;
+  dm.adocon.LoginPrompt :=false;
+  dm.adocon.ConnectionString :=constring;
+  try
+    dm.adocon.Connected :=true;
+  except
+    on e:exception do
+    begin
+//     showmessage('联接数据库不成功，请检查系统设置，或与程序编写者联系！');
+     application.Terminate;
+    end;
+  end;
+}
+
+end;
+
+end.

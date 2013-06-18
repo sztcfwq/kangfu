@@ -1,0 +1,9 @@
+[General]
+Name=kfzx
+Project=1
+[Classes]
+Count=4
+Class0="Tfrm_main","TForm","Umain","13","D:\编程\kfzx\Umain.pas"
+Class1="Tfrm_dl","TForm","udljm","9","D:\编程\kfzx\udljm.pas"
+Class2="Tdm","TDataModule","usjmk","8","D:\编程\kfzx\usjmk.pas"
+Class3="Tfrm_ts","TForm","uxmsz","9","D:\编程\kfzx\uxmsz.pas"

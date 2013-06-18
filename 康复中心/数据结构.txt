@@ -1,0 +1,152 @@
+if exists (select name from sysobjects where name='czryk' ) drop table czryk
+go
+create table czryk --操作人员库
+(
+	ryid		int		not null,	--人员序号
+	gh              varchar(6)      not null,	--工号
+	kl		varchar(12)	null,		--密码	
+	xm		varchar(12)     not null,	--姓名
+	py		varchar(6)	null,		--拼音
+	wb		varchar(6)	null,		--五笔
+	xb            	varchar(2)      null,		--性别
+	nl            	int             null,		--年龄
+	sscjxh	 	int	     	not null	--所属部门序号
+)
+go
+--以上数据库表与检验科分子报告单相同，不要轻易覆盖表(sscjxh取0表示检验科，1表示康复医疗中心)
+
+if exists (select name from sysobjects where name='kf_brxxk') drop table kf_brxxk
+go
+create table kf_brxxk --病人信息库
+(
+	brid		int		not null,	--病人id
+	xm		varchar(12)	not null,	--姓名
+	xb		char(2)		null,		--性别
+	nl		char(8)		null,		--年龄(生日)
+	dz		varchar(50)	null,		--地址
+	dw		varchar(50)	null		--单位
+)
+go
+
+if exists (select name from sysobjects where name='kf_brzdk') drop table kf_brzdk
+go
+create table kf_brzdk --病人诊断库
+(
+	zdid		int		not null,	--诊断id
+	brid		int		not null,	--病人id
+	zyh		varchar(12)	null,		--住院号/门诊号
+	bh		varchar(6)	null,           --编号
+	zdrq		datetime	not null,	--诊断日期
+	zdzz		varchar(100)	null,		--诊断症状
+	cf		varchar(200)	null,		--处方
+	zdr		varchar(12)	null,		--诊断人
+	zlcs		smallint	null,		--治疗次数
+	zlbz		varchar(60)	null,		--治疗备注
+	sfje		money  		null,		--收费金额
+	czy		varchar(12)	null,		--操作员
+	sfjs		tinyint         null,		--是否结束（0结束，1没有结束）
+	dqcs		smallint	null,		--当前次数
+	zlpc		smallint	null,		--治疗频次
+	mzlx		char(1)		not null	--门诊住院类别M,Z
+)
+go
+
+if exists(select name from sysobjects where name='kf_zlpck') drop table kf_zlpck
+go
+create table kf_zlpck --治疗频次库
+(
+	pcid		int		not null,	--频次id
+	pcmc		varchar(20)	not null,	--名称
+	zlpc		varchar(16)	not null        --治疗频次
+)
+go
+
+if exists (select name from sysobjects where name='kf_zllsk') drop table kf_zllsk
+go
+create table kf_zllsk --治疗流水库
+(
+	lsid		int		not null,	--流水id
+	brid		int		not null,	--病人id（当做诊断id使用）
+	jhrq		datetime	not null,	--计划日期
+	djc		smallint	null,		--第几次
+	czy		varchar(12)	null,		--操作员
+	zlssgh		varchar(6)	null,		--治疗医师工号
+	zlrq		datetime	null,		--治疗日期
+	wcbz		smallint	null		--完成标志（0没有完成，1完成）
+)
+go
+
+
+新添加的表
+if exists (select name from sysobjects where name='kf_brcfmxk') drop table kf_brzlk
+go
+create table kf_brcfmxk--病人处方明细库
+(
+	cflsid		int		not null,	--流水id
+	zdid		int		not null,	--诊断id
+	xmid		varchar(8)	not null,	--收费项目id
+	xmmc		varchar(30)	null,		--项目名称
+	sfje		money		null,		--项目收费金额
+	jlzt		smallint	not null,	--记录状态（1正常，2结束，3取消）
+)
+
+
+---sp
+alter proc usp_tj_qjtjrc     
+ @begdate datetime,    
+ @enddate datetime,    
+ @czy varchar(12)    
+as    
+begin    
+ create table #temp_qjtjrc    
+ (    
+  begdate datetime,    
+  enddate datetime,    
+  czy  varchar(12),    
+  zdrc int,    
+  zlrc int,
+  zje money    
+ )   
+ declare @zdrc int  
+ declare @zlrc int
+ declare @zje money   
+ insert into #temp_qjtjrc(begdate,enddate,czy) values(@begdate,@enddate,@czy)   
+ select @zdrc=count(*) from  kf_brzdk where zdrq between @begdate and @enddate  
+ select @zlrc=count(*) from  kf_zllsk where zlrq between @begdate and @enddate and wcbz=1
+ select @zje=sum(sfje) from  kf_brzdk where zdrq between @begdate and @enddate
+ update #temp_qjtjrc set zdrc=@zdrc  
+ update #temp_qjtjrc set zlrc=@zlrc 
+ update #temp_qjtjrc set zje=@zje 
+ select * from #temp_qjtjrc    
+ drop table #temp_qjtjrc    
+end    
+    
+--select * from kf_brzdk
+
+create proc usp_tj_dxmtj
+	@begdate datetime,
+	@enddate datetime,
+	@czy	varchar(12),
+	@xmmc	varchar(16)
+as
+begin
+	create table #temp_dxmtj
+	(
+		begdate datetime,
+		enddate datetime,
+		czy varchar(12),
+		xmmc varchar(12),
+		zdrq datetime,
+		zdr	varchar(12),
+		zlcs smallint,
+		je	money
+	)
+--insert into #temp_dxmtj (begdate,enddate,czy,xmmc,zdrq,zdr,zlcs,je) 
+	insert into #temp_dxmtj	
+		select @begdate,@enddate,@czy,cf,zdrq,zdr,zlcs,sfje
+			from kf_brzdk where zdrq between @begdate and @enddate and cf like @xmmc+'%'
+	select * from #temp_dxmtj
+	drop table #temp_dxmtj 
+end
+
+
