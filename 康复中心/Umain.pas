@@ -35,17 +35,8 @@ type
     edt_jkdw: TEdit;
     Label13: TLabel;
     edt_jkzz: TEdit;
-    GroupBox2: TGroupBox;
-    Label15: TLabel;
-    Label19: TLabel;
-    dtp_jkzdrq: TDateTimePicker;
-    Label20: TLabel;
-    cbb_jkzdys: TComboBox;
-    Label21: TLabel;
     bbt_bcbr: TBitBtn;
     bbt_dybr: TBitBtn;
-    bbt_dyzl: TBitBtn;
-    edt_jksfje: TEdit;
     BitBtn4: TBitBtn;
     GroupBox3: TGroupBox;
     Label6: TLabel;
@@ -157,20 +148,8 @@ type
     GroupBox7: TGroupBox;
     Label52: TLabel;
     edt_brbh: TEdit;
-    edt_cf: TEdit;
-    sb_zlxmlb: TSpeedButton;
     GroupBox8: TGroupBox;
     mem_jkzd: TMemo;
-    Label7: TLabel;
-    mem_yp: TMemo;
-    GroupBox9: TGroupBox;
-    Label16: TLabel;
-    cbb_jkzlpc: TComboBox;
-    Label17: TLabel;
-    edt_jkzlcs: TEdit;
-    Label18: TLabel;
-    Label14: TLabel;
-    sg_cf: TStringGrid;
     ppHeaderBand1: TppHeaderBand;
     ppLabel12: TppLabel;
     ppLabel13: TppLabel;
@@ -307,6 +286,42 @@ type
     SideBarStoreItem1: TdxStoredSideItem;
     SideBarStoreItem3: TdxStoredSideItem;
     SideBarStoreItem4: TdxStoredSideItem;
+    Panel7: TPanel;
+    GroupBox2: TGroupBox;
+    Label15: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    sb_zlxmlb: TSpeedButton;
+    Label7: TLabel;
+    Label14: TLabel;
+    dtp_jkzdrq: TDateTimePicker;
+    cbb_jkzdys: TComboBox;
+    edt_jksfje: TEdit;
+    edt_cf: TEdit;
+    mem_yp: TMemo;
+    sg_cf: TStringGrid;
+    Panel8: TPanel;
+    Splitter1: TSplitter;
+    bbt_dyzl: TBitBtn;
+    GroupBox9: TGroupBox;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    cbb_jkzlpc: TComboBox;
+    edt_jkzlcs: TEdit;
+    bbtn_cfkj: TBitBtn;
+    GroupBox13: TGroupBox;
+    BitBtn3: TBitBtn;
+    DBGrid2: TDBGrid;
+    BitBtn2: TBitBtn;
+    GroupBox12: TGroupBox;
+    Label1: TLabel;
+    lab_bh: TLabel;
+    Label3: TLabel;
+    Label55: TLabel;
+    lab_name: TLabel;
+    lab_sex: TLabel;
     procedure FormShow(Sender: TObject);
     procedure Image2Click(Sender: TObject);
     procedure Image3Click(Sender: TObject);
@@ -382,6 +397,7 @@ type
     procedure SideBarStoreItem4Click(Sender: TObject;
       Item: TdxSideBarItem);
     procedure FormResize(Sender: TObject);
+    procedure bbtn_cfkjClick(Sender: TObject);
   private
 //    procedure init_zl_face(Sender: TObject);//初始化治疗界面
 //    procedure init_jk_face(Sender: TObject);//初始化建卡界面
@@ -397,6 +413,7 @@ type
     procedure gridtosql(zdid:integer);//将grid中的数据存入数据库中
     procedure sclszljl(zdid:integer);//删除保存过但是没有治疗的处方项目对应的治疗流水记录
     procedure wczlhsxjm(brbh:string);//完成治疗后刷新界面
+    procedure show_hz_zlxx(bh:string;name:string;sex:string);  //进入治疗界面显示患者的治疗信息。
   public
     { Public declarations }
 end;
@@ -1080,7 +1097,7 @@ begin
   if (key=vk_return) and (ssctrl in shift) then
   begin
 //    key:=#0;
-    cbb_jkzlpc.SetFocus;
+   bbt_bcbr.SetFocus;
   end;
 end;
 
@@ -2406,6 +2423,29 @@ begin
   begin
      pp_view.PaintTo(self.Canvas,0,0);
   end;
+end;
+
+procedure Tfrm_main.bbtn_cfkjClick(Sender: TObject);
+begin
+  if (trim(edt_jkbh.Text)<>'') and (trim(edt_jkxm.Text)<>'') then
+  begin
+    show_hz_zlxx(trim(edt_jkbh.Text),trim(edt_jkxm.Text),trim(cbb_jkxb.Text));
+    nb.ActivePage :='cf';
+  end
+  else
+  begin
+    messagebox(self.handle,'请选择或新建患者基本信息！','编辑',mb_iconerror);
+    exit;
+  end;
+end;
+
+procedure Tfrm_main.show_hz_zlxx(bh:string;name:string;sex:string);
+begin
+   //显示患者的基本信息
+   lab_bh.caption:=bh;
+   lab_name.caption:=name;
+   lab_sex.caption :=sex;
+   //显示患者的历次治疗信息
 end;
 
 end.

@@ -4852,6 +4852,7 @@ object frm_main: Tfrm_main
         Font.Height = -14
         Font.Name = #23435#20307
         Font.Style = []
+        PageIndex = 1
         ParentFont = False
         TabOrder = 0
         object TPage
@@ -4859,15 +4860,15 @@ object frm_main: Tfrm_main
           Top = 0
           Caption = 'jk'
           object Label5: TLabel
-            Left = 632
+            Left = 616
             Top = 0
             Width = 28
             Height = 14
             Caption = #24314#21345
           end
           object GroupBox1: TGroupBox
-            Left = 16
-            Top = 131
+            Left = 23
+            Top = 199
             Width = 273
             Height = 118
             Caption = #30149#20154#22522#26412#20449#24687#65306
@@ -4992,154 +4993,13 @@ object frm_main: Tfrm_main
               OnKeyPress = edt_jkzzKeyPress
             end
           end
-          object GroupBox2: TGroupBox
-            Left = 296
-            Top = 15
-            Width = 353
-            Height = 361
-            Caption = #26412#27425#27835#30103#65306
-            TabOrder = 2
-            object Label15: TLabel
-              Left = 9
-              Top = 21
-              Width = 42
-              Height = 14
-              Caption = #22788#26041#65306
-            end
-            object Label19: TLabel
-              Left = 16
-              Top = 334
-              Width = 70
-              Height = 14
-              Caption = #35786#26029#26085#26399#65306
-            end
-            object Label20: TLabel
-              Left = 184
-              Top = 336
-              Width = 42
-              Height = 14
-              Caption = #21307#24072#65306
-            end
-            object Label21: TLabel
-              Left = 216
-              Top = 47
-              Width = 56
-              Height = 14
-              Caption = #24635#37329#39069#65306
-            end
-            object sb_zlxmlb: TSpeedButton
-              Left = 321
-              Top = 15
-              Width = 21
-              Height = 22
-              Flat = True
-              Glyph.Data = {
-                06020000424D0602000000000000760000002800000028000000140000000100
-                0400000000009001000000000000000000001000000000000000000000000000
-                8000008000000080800080000000800080008080000080808000C0C0C0000000
-                FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
-                3333333333333333333333333333333333333333333333333333333333333333
-                3333333333330033333333333333333377F33333333333333330FF0333333333
-                33333337F37F333333333333330FFFF0333333333333337F3337F33333333333
-                330FF078033333333333337F37F87F33333333333337FF003333333333333337
-                F377F333333333333330FF733333333333333337F37F33333333333333337FF0
-                33333333333333337F37F3333333333333300FF733333333333333377F37F333
-                33333333330870FF033333333333337F87F37F33333333333330FFFF03333333
-                33333337F3337F333333333333330FF033333333333333337F37F33333333333
-                333330033333333333333333377F333333333333333333003333333333333333
-                3377F33333333333333330FF033333333333333337F37F3333333333333330FF
-                033333333333333337F37F33333333333333330033333333333333333377F333
-                3333333333333333333333333333333333333333333333333333333333333333
-                33333333333333333333}
-              NumGlyphs = 2
-              OnClick = sb_zlxmlbClick
-            end
-            object Label7: TLabel
-              Left = 8
-              Top = 238
-              Width = 42
-              Height = 14
-              Caption = #33647#21697#65306
-            end
-            object Label14: TLabel
-              Left = 8
-              Top = 47
-              Width = 98
-              Height = 14
-              Caption = #22788#26041#26126#32454#21015#34920#65306
-            end
-            object dtp_jkzdrq: TDateTimePicker
-              Left = 80
-              Top = 330
-              Width = 97
-              Height = 22
-              Date = 37945.375000000000000000
-              Time = 37945.375000000000000000
-              ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
-              TabOrder = 0
-              OnKeyPress = dtp_jkzdrqKeyPress
-            end
-            object cbb_jkzdys: TComboBox
-              Left = 224
-              Top = 332
-              Width = 113
-              Height = 22
-              ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
-              ItemHeight = 14
-              TabOrder = 1
-              Text = 'cbb_jkzdys'
-              OnEnter = cbb_jkzdysEnter
-              OnKeyPress = cbb_jkzdysKeyPress
-            end
-            object edt_jksfje: TEdit
-              Left = 264
-              Top = 41
-              Width = 81
-              Height = 22
-              ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
-              TabOrder = 2
-              Text = '0'
-              OnKeyPress = edt_jksfjeKeyPress
-            end
-            object edt_cf: TEdit
-              Left = 45
-              Top = 16
-              Width = 274
-              Height = 22
-              ImeName = #20013#25991' ('#31616#20307') - '#21152#21152#36755#20837#27861'5.0'
-              TabOrder = 3
-              Text = 'edt_cf'
-              OnKeyDown = edt_cfKeyDown
-              OnKeyPress = edt_cfKeyPress
-            end
-            object mem_yp: TMemo
-              Left = 8
-              Top = 253
-              Width = 337
-              Height = 71
-              ImeName = #20013#25991' ('#31616#20307') - '#21152#21152#36755#20837#27861'5.0'
-              Lines.Strings = (
-                'Memo1')
-              TabOrder = 4
-              OnKeyDown = mem_ypKeyDown
-            end
-            object sg_cf: TStringGrid
-              Left = 8
-              Top = 72
-              Width = 337
-              Height = 161
-              RowCount = 2
-              TabOrder = 5
-              OnKeyPress = sg_cfKeyPress
-            end
-          end
           object bbt_bcbr: TBitBtn
             Left = 244
-            Top = 386
+            Top = 378
             Width = 113
             Height = 33
-            Caption = #20445#23384#30149#20154#20449#24687
-            TabOrder = 3
+            Caption = #20445#23384#20449#24687
+            TabOrder = 2
             OnClick = bbt_bcbrClick
             Glyph.Data = {
               76010000424D7601000000000000760000002800000020000000100000000100
@@ -5157,12 +5017,12 @@ object frm_main: Tfrm_main
             NumGlyphs = 2
           end
           object bbt_dybr: TBitBtn
-            Left = 392
-            Top = 386
+            Left = 536
+            Top = 378
             Width = 113
             Height = 33
             Caption = #25171#21360#30149#20154#21345#29255
-            TabOrder = 4
+            TabOrder = 3
             Visible = False
             OnClick = bbt_dybrClick
             Glyph.Data = {
@@ -5180,36 +5040,13 @@ object frm_main: Tfrm_main
               33333337FFFF7733333333300000033333333337777773333333}
             NumGlyphs = 2
           end
-          object bbt_dyzl: TBitBtn
-            Left = 432
-            Top = 386
-            Width = 113
-            Height = 33
-            Caption = #25171#21360#27835#30103#21333#25454
-            TabOrder = 5
-            OnClick = bbt_dyzlClick
-            Glyph.Data = {
-              76010000424D7601000000000000760000002800000020000000100000000100
-              04000000000000010000120B0000120B00001000000000000000000000000000
-              800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
-              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00300000000000
-              003337777777777777F330FFFFFFFFFFF033373F3F3F3F3F3733330F0F0F0F0F
-              03333F7F737373737FFF0000FFFFFFF0000377773FFFFFF7777F0FF800000008
-              FF037F3F77777773FF7F0F9FFFFFFFF000037F7333333337777F0FFFFFFFFFFF
-              FF0373FFFFFFFFFFFF7330000000000000333777777777777733333000000000
-              3333333777777777F3333330FFFFFFF033333337F3FFFFF7F3333330F00000F0
-              33333337F77777F7F3333330F0AAE0F033333337F7F337F7F3333330F0DAD0F0
-              33333337F7FFF7F7F3333330F00000F033333337F7777737F3333330FFFFFFF0
-              33333337FFFFFFF7F33333300000000033333337777777773333}
-            NumGlyphs = 2
-          end
           object bbt_xzbr: TBitBtn
-            Left = 56
-            Top = 386
+            Left = 64
+            Top = 378
             Width = 113
             Height = 33
             Caption = #26032#22686#30149#20154
-            TabOrder = 6
+            TabOrder = 4
             OnClick = bbt_xzbrClick
             Glyph.Data = {
               76010000424D7601000000000000760000002800000020000000100000000100
@@ -5227,34 +5064,34 @@ object frm_main: Tfrm_main
             NumGlyphs = 2
           end
           object RadioGroup1: TRadioGroup
-            Left = 16
-            Top = 67
+            Left = 23
+            Top = 135
             Width = 273
             Height = 57
             Caption = #36755#20837#35786#30103#32534#21495#65306
-            TabOrder = 7
+            TabOrder = 5
           end
           object rb_mzh: TRadioButton
-            Left = 24
-            Top = 83
+            Left = 31
+            Top = 151
             Width = 65
             Height = 17
             Caption = #38376#35786#21495
             Checked = True
-            TabOrder = 8
+            TabOrder = 6
             TabStop = True
           end
           object rb_zyh: TRadioButton
-            Left = 24
-            Top = 103
+            Left = 31
+            Top = 171
             Width = 65
             Height = 17
             Caption = #20303#38498#21495
-            TabOrder = 9
+            TabOrder = 7
           end
           object edt_jkzyh: TEdit
-            Left = 105
-            Top = 89
+            Left = 112
+            Top = 157
             Width = 168
             Height = 22
             ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
@@ -5263,12 +5100,12 @@ object frm_main: Tfrm_main
             OnKeyPress = edt_jkzyhKeyPress
           end
           object GroupBox7: TGroupBox
-            Left = 16
-            Top = 15
+            Left = 23
+            Top = 83
             Width = 273
             Height = 49
-            Caption = #36755#20837#22522#26412#32534#21495#65306
-            TabOrder = 10
+            Caption = #36755#20837#24247#22797#32534#21495#65306
+            TabOrder = 8
             object Label52: TLabel
               Left = 16
               Top = 24
@@ -5288,17 +5125,17 @@ object frm_main: Tfrm_main
             end
           end
           object GroupBox8: TGroupBox
-            Left = 15
-            Top = 253
-            Width = 273
-            Height = 68
+            Left = 302
+            Top = 82
+            Width = 330
+            Height = 235
             Caption = #35786#26029#25110#30151#29366#65306
-            TabOrder = 11
+            TabOrder = 9
             object mem_jkzd: TMemo
               Left = 2
               Top = 16
-              Width = 269
-              Height = 50
+              Width = 326
+              Height = 217
               Align = alClient
               ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
               Lines.Strings = (
@@ -5307,62 +5144,442 @@ object frm_main: Tfrm_main
               OnKeyDown = mem_jkzdKeyDown
             end
           end
-          object GroupBox9: TGroupBox
-            Left = 15
-            Top = 323
-            Width = 274
-            Height = 53
-            Caption = #27835#30103#39057#27425
-            TabOrder = 12
-            object Label16: TLabel
-              Left = 4
-              Top = 24
-              Width = 70
-              Height = 14
-              Caption = #27835#30103#39057#27425#65306
-            end
-            object Label17: TLabel
-              Left = 145
-              Top = 24
-              Width = 70
-              Height = 14
-              Caption = #27835#30103#27425#25968#65306
-            end
-            object Label18: TLabel
-              Left = 252
-              Top = 24
-              Width = 14
-              Height = 14
-              Caption = #27425
-            end
-            object cbb_jkzlpc: TComboBox
-              Left = 68
-              Top = 19
-              Width = 69
-              Height = 22
-              ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
-              ItemHeight = 14
-              TabOrder = 0
-              Text = 'cbb_jkzlpc'
-              OnEnter = cbb_jkzlpcEnter
-              OnKeyPress = cbb_jkzlpcKeyPress
-            end
-            object edt_jkzlcs: TEdit
-              Left = 207
-              Top = 19
-              Width = 41
-              Height = 22
-              ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
-              TabOrder = 1
-              Text = '10'
-              OnKeyPress = edt_jkzlcsKeyPress
-            end
+          object bbtn_cfkj: TBitBtn
+            Left = 427
+            Top = 378
+            Width = 105
+            Height = 33
+            Caption = #22788#26041#24320#20855
+            TabOrder = 10
+            OnClick = bbtn_cfkjClick
+            Glyph.Data = {
+              36030000424D3603000000000000360000002800000010000000100000000100
+              18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFF000000000000101820B9C6C8FFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F8F8A0A0A0FFFFFF50
+              90B0204850D5DDE1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0A8A0604830
+              604830604830A59B91A0A0A090B8C070D0E05098B020486086867B7D6A566048
+              30604830FFFFFFFFFFFFC0A8A0D0C8C0D0C0B0D0C0B0E0C8C0E0D0D080A8B090
+              E0F060C0D05098B0204860A09090B0A090604830FFFFFFFFFFFFC0B0A0FFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFC0C0C080A8B090E0F060C0D05098B0204860A090
+              90604830FFFFFFFFFFFFC0B0A0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0D0D0C0
+              D0D080A8B090E0F060C0D05098B02048609C9C93FFFFFFFFFFFFD0B0A0FFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFD0C0B0FFFFFFD0D8E080A8B090E0F070C8E08088
+              80202860C7C9D7FFFFFFD0B8A0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0C0B0FF
+              FFFFFFF8FFC0D0D080A0B0D0B8B07088D06070B0303890FFFFFFD0B8B0E0D0C0
+              E0D0C0E0D0C0E0C8C0E0C8C0D0C8C0D0C0B0D0C0B0D0C0B0E0D0D06070B07090
+              E06078D06070B0FFFFFFD0C0B0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0C8C0FF
+              FFFFFFFFFFFFF8FFFFF8F0C0C0E06070B06070B0E1E6F3FFFFFFD0C0B0FFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFE0D0C0FFFFFFFFFFFFFFFFFFFFF8F0F0F0F0E0D0
+              D097847DFFFFFFFFFFFFE0C8C0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0D0C0FF
+              FFFFFFFFFFFFFFFFFFFFFFFFF8F0E0D0D0604830FFFFFFFFFFFFE0C8C0FFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFE0D0C0FFFFFFFFFFFFFFFFFFFFFFFFFFF8FFE0D0
+              D0604830FFFFFFFFFFFFE0D0C0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0D0C0FF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F0604830FFFFFFFFFFFFE0D0C0E0D0C0
+              E0C8C0E0C8C0D0C0B0D0C0B0D0B8B0D0B8A0C0B0A0C0B0A0C0B0A0C0A8A0C0A8
+              A0C0A890FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           end
         end
         object TPage
           Left = 0
           Top = 0
           Caption = 'cf'
+          object Splitter1: TSplitter
+            Left = 293
+            Top = 0
+            Height = 418
+            Align = alRight
+          end
+          object Panel7: TPanel
+            Left = 296
+            Top = 0
+            Width = 359
+            Height = 418
+            Align = alRight
+            Caption = 'Panel7'
+            TabOrder = 0
+            object GroupBox2: TGroupBox
+              Left = 1
+              Top = 1
+              Width = 357
+              Height = 416
+              Align = alClient
+              Caption = #26412#27425#27835#30103#65306
+              TabOrder = 0
+              object Label15: TLabel
+                Left = 9
+                Top = 21
+                Width = 42
+                Height = 14
+                Caption = #22788#26041#65306
+              end
+              object Label19: TLabel
+                Left = 16
+                Top = 334
+                Width = 70
+                Height = 14
+                Caption = #22788#26041#26085#26399#65306
+              end
+              object Label20: TLabel
+                Left = 184
+                Top = 336
+                Width = 42
+                Height = 14
+                Caption = #21307#24072#65306
+              end
+              object Label21: TLabel
+                Left = 216
+                Top = 47
+                Width = 56
+                Height = 14
+                Caption = #24635#37329#39069#65306
+              end
+              object sb_zlxmlb: TSpeedButton
+                Left = 321
+                Top = 15
+                Width = 21
+                Height = 22
+                Flat = True
+                Glyph.Data = {
+                  06020000424D0602000000000000760000002800000028000000140000000100
+                  0400000000009001000000000000000000001000000000000000000000000000
+                  8000008000000080800080000000800080008080000080808000C0C0C0000000
+                  FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+                  3333333333333333333333333333333333333333333333333333333333333333
+                  3333333333330033333333333333333377F33333333333333330FF0333333333
+                  33333337F37F333333333333330FFFF0333333333333337F3337F33333333333
+                  330FF078033333333333337F37F87F33333333333337FF003333333333333337
+                  F377F333333333333330FF733333333333333337F37F33333333333333337FF0
+                  33333333333333337F37F3333333333333300FF733333333333333377F37F333
+                  33333333330870FF033333333333337F87F37F33333333333330FFFF03333333
+                  33333337F3337F333333333333330FF033333333333333337F37F33333333333
+                  333330033333333333333333377F333333333333333333003333333333333333
+                  3377F33333333333333330FF033333333333333337F37F3333333333333330FF
+                  033333333333333337F37F33333333333333330033333333333333333377F333
+                  3333333333333333333333333333333333333333333333333333333333333333
+                  33333333333333333333}
+                NumGlyphs = 2
+                OnClick = sb_zlxmlbClick
+              end
+              object Label7: TLabel
+                Left = 8
+                Top = 238
+                Width = 42
+                Height = 14
+                Caption = #33647#21697#65306
+              end
+              object Label14: TLabel
+                Left = 8
+                Top = 47
+                Width = 98
+                Height = 14
+                Caption = #22788#26041#26126#32454#21015#34920#65306
+              end
+              object dtp_jkzdrq: TDateTimePicker
+                Left = 80
+                Top = 330
+                Width = 97
+                Height = 22
+                Date = 37945.375000000000000000
+                Time = 37945.375000000000000000
+                ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
+                TabOrder = 0
+                OnKeyPress = dtp_jkzdrqKeyPress
+              end
+              object cbb_jkzdys: TComboBox
+                Left = 224
+                Top = 332
+                Width = 113
+                Height = 22
+                ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
+                ItemHeight = 14
+                TabOrder = 1
+                Text = 'cbb_jkzdys'
+                OnEnter = cbb_jkzdysEnter
+                OnKeyPress = cbb_jkzdysKeyPress
+              end
+              object edt_jksfje: TEdit
+                Left = 264
+                Top = 41
+                Width = 81
+                Height = 22
+                ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
+                TabOrder = 2
+                Text = '0'
+                OnKeyPress = edt_jksfjeKeyPress
+              end
+              object edt_cf: TEdit
+                Left = 45
+                Top = 16
+                Width = 274
+                Height = 22
+                ImeName = #20013#25991' ('#31616#20307') - '#21152#21152#36755#20837#27861'5.0'
+                TabOrder = 3
+                Text = 'edt_cf'
+                OnKeyDown = edt_cfKeyDown
+                OnKeyPress = edt_cfKeyPress
+              end
+              object mem_yp: TMemo
+                Left = 8
+                Top = 253
+                Width = 337
+                Height = 71
+                ImeName = #20013#25991' ('#31616#20307') - '#21152#21152#36755#20837#27861'5.0'
+                Lines.Strings = (
+                  'Memo1')
+                TabOrder = 4
+                OnKeyDown = mem_ypKeyDown
+              end
+              object sg_cf: TStringGrid
+                Left = 8
+                Top = 72
+                Width = 337
+                Height = 161
+                RowCount = 2
+                TabOrder = 5
+                OnKeyPress = sg_cfKeyPress
+              end
+              object bbt_dyzl: TBitBtn
+                Left = 236
+                Top = 375
+                Width = 113
+                Height = 33
+                Caption = #25171#21360#27835#30103#21333#25454
+                TabOrder = 6
+                OnClick = bbt_dyzlClick
+                Glyph.Data = {
+                  76010000424D7601000000000000760000002800000020000000100000000100
+                  04000000000000010000120B0000120B00001000000000000000000000000000
+                  800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+                  FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00300000000000
+                  003337777777777777F330FFFFFFFFFFF033373F3F3F3F3F3733330F0F0F0F0F
+                  03333F7F737373737FFF0000FFFFFFF0000377773FFFFFF7777F0FF800000008
+                  FF037F3F77777773FF7F0F9FFFFFFFF000037F7333333337777F0FFFFFFFFFFF
+                  FF0373FFFFFFFFFFFF7330000000000000333777777777777733333000000000
+                  3333333777777777F3333330FFFFFFF033333337F3FFFFF7F3333330F00000F0
+                  33333337F77777F7F3333330F0AAE0F033333337F7F337F7F3333330F0DAD0F0
+                  33333337F7FFF7F7F3333330F00000F033333337F7777737F3333330FFFFFFF0
+                  33333337FFFFFFF7F33333300000000033333337777777773333}
+                NumGlyphs = 2
+              end
+              object BitBtn3: TBitBtn
+                Left = 10
+                Top = 375
+                Width = 113
+                Height = 33
+                Caption = #26032#22686#27835#30103#21333
+                TabOrder = 7
+                OnClick = bbt_dyzlClick
+                Glyph.Data = {
+                  36030000424D3603000000000000360000002800000010000000100000000100
+                  18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+                  FFFFFFFFFFFFFFFFFF000000000000101820B9C6C8FFFFFFFFFFFFFFFFFFFFFF
+                  FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F8F8A0A0A0FFFFFF50
+                  90B0204850D5DDE1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0A8A0604830
+                  604830604830A59B91A0A0A090B8C070D0E05098B020486086867B7D6A566048
+                  30604830FFFFFFFFFFFFC0A8A0D0C8C0D0C0B0D0C0B0E0C8C0E0D0D080A8B090
+                  E0F060C0D05098B0204860A09090B0A090604830FFFFFFFFFFFFC0B0A0FFFFFF
+                  FFFFFFFFFFFFFFFFFFFFFFFFC0C0C080A8B090E0F060C0D05098B0204860A090
+                  90604830FFFFFFFFFFFFC0B0A0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0D0D0C0
+                  D0D080A8B090E0F060C0D05098B02048609C9C93FFFFFFFFFFFFD0B0A0FFFFFF
+                  FFFFFFFFFFFFFFFFFFFFFFFFD0C0B0FFFFFFD0D8E080A8B090E0F070C8E08088
+                  80202860C7C9D7FFFFFFD0B8A0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0C0B0FF
+                  FFFFFFF8FFC0D0D080A0B0D0B8B07088D06070B0303890FFFFFFD0B8B0E0D0C0
+                  E0D0C0E0D0C0E0C8C0E0C8C0D0C8C0D0C0B0D0C0B0D0C0B0E0D0D06070B07090
+                  E06078D06070B0FFFFFFD0C0B0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0C8C0FF
+                  FFFFFFFFFFFFF8FFFFF8F0C0C0E06070B06070B0E1E6F3FFFFFFD0C0B0FFFFFF
+                  FFFFFFFFFFFFFFFFFFFFFFFFE0D0C0FFFFFFFFFFFFFFFFFFFFF8F0F0F0F0E0D0
+                  D097847DFFFFFFFFFFFFE0C8C0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0D0C0FF
+                  FFFFFFFFFFFFFFFFFFFFFFFFF8F0E0D0D0604830FFFFFFFFFFFFE0C8C0FFFFFF
+                  FFFFFFFFFFFFFFFFFFFFFFFFE0D0C0FFFFFFFFFFFFFFFFFFFFFFFFFFF8FFE0D0
+                  D0604830FFFFFFFFFFFFE0D0C0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0D0C0FF
+                  FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F0604830FFFFFFFFFFFFE0D0C0E0D0C0
+                  E0C8C0E0C8C0D0C0B0D0C0B0D0B8B0D0B8A0C0B0A0C0B0A0C0B0A0C0A8A0C0A8
+                  A0C0A890FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                  FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+              end
+              object BitBtn2: TBitBtn
+                Left = 124
+                Top = 375
+                Width = 113
+                Height = 33
+                Caption = #20445#23384#27835#30103#21333#25454
+                TabOrder = 8
+                OnClick = bbt_dyzlClick
+                Glyph.Data = {
+                  76010000424D7601000000000000760000002800000020000000100000000100
+                  04000000000000010000120B0000120B00001000000000000000000000000000
+                  800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+                  FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00300000000000
+                  003337777777777777F330FFFFFFFFFFF033373F3F3F3F3F3733330F0F0F0F0F
+                  03333F7F737373737FFF0000FFFFFFF0000377773FFFFFF7777F0FF800000008
+                  FF037F3F77777773FF7F0F9FFFFFFFF000037F7333333337777F0FFFFFFFFFFF
+                  FF0373FFFFFFFFFFFF7330000000000000333777777777777733333000000000
+                  3333333777777777F3333330FFFFFFF033333337F3FFFFF7F3333330F00000F0
+                  33333337F77777F7F3333330F0AAE0F033333337F7F337F7F3333330F0DAD0F0
+                  33333337F7FFF7F7F3333330F00000F033333337F7777737F3333330FFFFFFF0
+                  33333337FFFFFFF7F33333300000000033333337777777773333}
+                NumGlyphs = 2
+              end
+            end
+          end
+          object Panel8: TPanel
+            Left = 0
+            Top = 0
+            Width = 293
+            Height = 418
+            Align = alClient
+            Caption = 'Panel8'
+            TabOrder = 1
+            object GroupBox9: TGroupBox
+              Left = 1
+              Top = 364
+              Width = 291
+              Height = 53
+              Align = alBottom
+              Caption = #27835#30103#39057#27425
+              TabOrder = 0
+              object Label16: TLabel
+                Left = 4
+                Top = 24
+                Width = 70
+                Height = 14
+                Caption = #27835#30103#39057#27425#65306
+              end
+              object Label17: TLabel
+                Left = 152
+                Top = 24
+                Width = 70
+                Height = 14
+                Caption = #27835#30103#27425#25968#65306
+              end
+              object Label18: TLabel
+                Left = 259
+                Top = 24
+                Width = 14
+                Height = 14
+                Caption = #27425
+              end
+              object cbb_jkzlpc: TComboBox
+                Left = 68
+                Top = 19
+                Width = 77
+                Height = 22
+                ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
+                ItemHeight = 14
+                TabOrder = 0
+                Text = 'cbb_jkzlpc'
+                OnEnter = cbb_jkzlpcEnter
+                OnKeyPress = cbb_jkzlpcKeyPress
+              end
+              object edt_jkzlcs: TEdit
+                Left = 214
+                Top = 19
+                Width = 41
+                Height = 22
+                ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
+                TabOrder = 1
+                Text = '10'
+                OnKeyPress = edt_jkzlcsKeyPress
+              end
+            end
+            object GroupBox13: TGroupBox
+              Left = 1
+              Top = 74
+              Width = 291
+              Height = 290
+              Align = alClient
+              Caption = #27835#30103#21382#21490
+              TabOrder = 1
+              object DBGrid2: TDBGrid
+                Left = 2
+                Top = 16
+                Width = 287
+                Height = 272
+                Align = alClient
+                TabOrder = 0
+                TitleFont.Charset = ANSI_CHARSET
+                TitleFont.Color = clWindowText
+                TitleFont.Height = -14
+                TitleFont.Name = #23435#20307
+                TitleFont.Style = []
+                Columns = <
+                  item
+                    Alignment = taCenter
+                    Expanded = False
+                    Title.Alignment = taCenter
+                    Title.Caption = #26085#26399
+                    Visible = True
+                  end
+                  item
+                    Alignment = taCenter
+                    Expanded = False
+                    Title.Alignment = taCenter
+                    Title.Caption = #21307#24072
+                    Visible = True
+                  end
+                  item
+                    Alignment = taRightJustify
+                    Expanded = False
+                    Title.Alignment = taRightJustify
+                    Title.Caption = #37329#39069
+                    Visible = True
+                  end>
+              end
+            end
+            object GroupBox12: TGroupBox
+              Left = 1
+              Top = 1
+              Width = 291
+              Height = 73
+              Align = alTop
+              Caption = #24739#32773#20449#24687
+              TabOrder = 2
+              object Label1: TLabel
+                Left = 8
+                Top = 24
+                Width = 42
+                Height = 14
+                Caption = #32534#21495#65306
+              end
+              object lab_bh: TLabel
+                Left = 48
+                Top = 24
+                Width = 42
+                Height = 14
+                Caption = 'lab_bh'
+              end
+              object Label3: TLabel
+                Left = 8
+                Top = 48
+                Width = 42
+                Height = 14
+                Caption = #22995#21517#65306
+              end
+              object Label55: TLabel
+                Left = 152
+                Top = 48
+                Width = 42
+                Height = 14
+                Caption = #24615#21035#65306
+              end
+              object lab_name: TLabel
+                Left = 50
+                Top = 48
+                Width = 56
+                Height = 14
+                Caption = 'lab_name'
+              end
+              object lab_sex: TLabel
+                Left = 200
+                Top = 48
+                Width = 49
+                Height = 14
+                Caption = 'lab_sex'
+              end
+            end
+          end
         end
         object TPage
           Left = 0
@@ -6074,7 +6291,7 @@ object frm_main: Tfrm_main
                 Width = 105
                 Height = 22
                 ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
-                ItemHeight = 0
+                ItemHeight = 14
                 TabOrder = 4
                 OnEnter = cbb_ysEnter
               end
@@ -6147,7 +6364,7 @@ object frm_main: Tfrm_main
                 Width = 105
                 Height = 22
                 ImeName = #20013#25991' ('#31616#20307') - '#25340#38899#21152#21152
-                ItemHeight = 0
+                ItemHeight = 14
                 TabOrder = 4
                 OnEnter = cbb_zlsEnter
               end
@@ -6624,8 +6841,8 @@ object frm_main: Tfrm_main
   object qf: TADOQuery
     Connection = dm.adocon
     Parameters = <>
-    Left = 328
-    Top = 32
+    Left = 224
+    Top = 24
   end
   object q_lb: TADOQuery
     Connection = dm.adocon
@@ -8450,8 +8667,8 @@ object frm_main: Tfrm_main
     MasterDataPipelineName = 'ppmline'
   end
   object pm_brlb: TPopupMenu
-    Left = 448
-    Top = 48
+    Left = 256
+    Top = 24
     object N7: TMenuItem
       Caption = #32467#26463#27835#30103
       OnClick = N7Click
@@ -8460,10 +8677,10 @@ object frm_main: Tfrm_main
   object imgLarge: TImageList
     Height = 32
     Width = 32
-    Left = 240
+    Left = 192
     Top = 24
     Bitmap = {
-      494C01010A000E00040020002000FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
+      494C01010A000E00040020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000008000000001002000000000000000
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -10579,7 +10796,8 @@ object frm_main: Tfrm_main
       FFEFFE1FFFF00001C000003FC000000FFFFFFFFFFFF80001C000003FE000001F
       FFFFFFFFFFFC0003C000003FF000003FFFFFFFFFFFFE0007C000003FF800007F
       FFFFFFFFFFFF83FFC000003FFC0000FFFFFFFFFFFFFFC7FFC000003FFF0003FF
-      FFFFFFFFFFFFFFFFFFF87FFFFFE01FFF}
+      FFFFFFFFFFFFFFFFFFF87FFFFFE01FFF00000000000000000000000000000000
+      000000000000}
   end
   object SideBarStore: TdxSideBarStore
     Categories.Strings = (
