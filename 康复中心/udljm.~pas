@@ -38,7 +38,7 @@ var
 
 implementation
 
-uses usjmk;
+uses usjmk, Umain;
 
 {$R *.dfm}
 
@@ -139,11 +139,11 @@ begin
   conhis:=decrypt(shis,222);
   readln(f,sother);
   conother:=decrypt(sother,222);
-  //dm.acon_this4.ConnectionString :=conf+conhis;
+  dm.acon_this4.ConnectionString :=conf+conhis;
   dm.adocon.ConnectionString :=conf+conother;
  // showmessage(conf+conhis);
  // showmessage(conf+conother);
-  //dm.acon_this4.Connected :=true;
+  dm.acon_this4.Connected :=true;
   dm.adocon.Connected :=true;
   closefile(f);
 {var

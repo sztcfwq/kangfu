@@ -38,7 +38,7 @@ var
 
 implementation
 
-uses usjmk;
+uses usjmk, Umain;
 
 {$R *.dfm}
 
@@ -131,6 +131,10 @@ begin
      writeln(f,Encrypt('Password=sacseyhis;Persist Security Info=True;User ID=sa;Initial Catalog=THIS4DB;Data Source=zx-db15',222));
      writeln(f,Encrypt('Password=123;Persist Security Info=True;User ID=bagl;Initial Catalog=yyother;Data Source=zx-db16',222));
      closefile(f);
+     {
+     writeln(f,Encrypt('Password=sa;Persist Security Info=True;User ID=sa;Initial Catalog=THIS2013;Data Source=david-dell',222));
+     writeln(f,Encrypt('Password=sa;Persist Security Info=True;User ID=sa;Initial Catalog=yyother;Data Source=david-dell',222));
+     }
   end;
   conf:='Provider=SQLOLEDB.1;';
   Assignfile(f,filepath+filename);

@@ -8,7 +8,7 @@ uses
   Grids, DBGrids, DB, ADODB, ppEndUsr, ppProd, ppClass, ppReport, ppComm,
   ppRelatv, ppDB, ppDBPipe, ppBands, ppCache, jpeg, ppViewr, Menus,
   ppCtrls, ppPrnabl,  ppVar, ppSubRpt, ppStrtch, ppMemo, raFunc, dxsbar,
-  ImgList;
+  ImgList, RxGIF;
 
 type
   Tfrm_main = class(TForm)   
@@ -21,22 +21,6 @@ type
     nb: TNotebook;
     Label4: TLabel;
     Label5: TLabel;
-    edt_jkzyh: TEdit;
-    GroupBox1: TGroupBox;
-    Label8: TLabel;
-    edt_jkbh: TEdit;
-    Label9: TLabel;
-    edt_jkxm: TEdit;
-    Label10: TLabel;
-    cbb_jkxb: TComboBox;
-    Label11: TLabel;
-    edt_jknl: TEdit;
-    Label12: TLabel;
-    edt_jkdw: TEdit;
-    Label13: TLabel;
-    edt_jkzz: TEdit;
-    bbt_bcbr: TBitBtn;
-    bbt_dybr: TBitBtn;
     BitBtn4: TBitBtn;
     GroupBox3: TGroupBox;
     Label6: TLabel;
@@ -74,16 +58,11 @@ type
     SpeedButton1: TSpeedButton;
     DataSource1: TDataSource;
     qcsey: TADOQuery;
-    bbt_xzbr: TBitBtn;
     ppline: TppDBPipeline;
     pprpt: TppReport;
     ppdsg: TppDesigner;
     dsrpt: TDataSource;
     cbb_zlzlys: TComboBox;
-    RadioGroup1: TRadioGroup;
-    rb_mzh: TRadioButton;
-    rb_zyh: TRadioButton;
-    lbrlx: TLabel;
     ppmline: TppDBPipeline;
     qp: TADOQuery;
     DataSource2: TDataSource;
@@ -145,11 +124,6 @@ type
     Label50: TLabel;
     Label51: TLabel;
     edt_cxxm: TEdit;
-    GroupBox7: TGroupBox;
-    Label52: TLabel;
-    edt_brbh: TEdit;
-    GroupBox8: TGroupBox;
-    mem_jkzd: TMemo;
     ppHeaderBand1: TppHeaderBand;
     ppLabel12: TppLabel;
     ppLabel13: TppLabel;
@@ -288,33 +262,10 @@ type
     SideBarStoreItem4: TdxStoredSideItem;
     Panel7: TPanel;
     GroupBox2: TGroupBox;
-    Label15: TLabel;
-    Label19: TLabel;
-    Label20: TLabel;
-    Label21: TLabel;
-    sb_zlxmlb: TSpeedButton;
-    Label7: TLabel;
-    Label14: TLabel;
-    dtp_jkzdrq: TDateTimePicker;
-    cbb_jkzdys: TComboBox;
-    edt_jksfje: TEdit;
-    edt_cf: TEdit;
-    mem_yp: TMemo;
-    sg_cf: TStringGrid;
     Panel8: TPanel;
     Splitter1: TSplitter;
-    bbt_dyzl: TBitBtn;
-    GroupBox9: TGroupBox;
-    Label16: TLabel;
-    Label17: TLabel;
-    Label18: TLabel;
-    cbb_jkzlpc: TComboBox;
-    edt_jkzlcs: TEdit;
-    bbtn_cfkj: TBitBtn;
     GroupBox13: TGroupBox;
-    BitBtn3: TBitBtn;
-    DBGrid2: TDBGrid;
-    BitBtn2: TBitBtn;
+    grd_zdhis: TDBGrid;
     GroupBox12: TGroupBox;
     Label1: TLabel;
     lab_bh: TLabel;
@@ -322,10 +273,63 @@ type
     Label55: TLabel;
     lab_name: TLabel;
     lab_sex: TLabel;
+    SideBarStoreItem5: TdxStoredSideItem;
+    GroupBox8: TGroupBox;
+    mem_jkzd: TMemo;
+    Panel9: TPanel;
+    GroupBox1: TGroupBox;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    lbrlx: TLabel;
+    edt_jkbh: TEdit;
+    edt_jkxm: TEdit;
+    cbb_jkxb: TComboBox;
+    edt_jknl: TEdit;
+    edt_jkdw: TEdit;
+    edt_jkzz: TEdit;
+    RadioGroup1: TRadioGroup;
+    rb_mzh: TRadioButton;
+    rb_zyh: TRadioButton;
+    edt_jkzyh: TEdit;
+    GroupBox7: TGroupBox;
+    Label52: TLabel;
+    edt_brbh: TEdit;
+    bbt_xzbr: TBitBtn;
+    bbt_bcbr: TBitBtn;
+    bbtn_cfkj: TBitBtn;
+    bbt_dybr: TBitBtn;
+    Panel10: TPanel;
+    Label7: TLabel;
+    mem_yp: TMemo;
+    Label19: TLabel;
+    dtp_jkzdrq: TDateTimePicker;
+    Label20: TLabel;
+    cbb_jkzdys: TComboBox;
+    bbtn_newzld: TBitBtn;
+    bbtn_savezld: TBitBtn;
+    bbt_dyzl: TBitBtn;
+    Panel11: TPanel;
+    sg_cf: TStringGrid;
+    Panel12: TPanel;
+    Label16: TLabel;
+    cbb_jkzlpc: TComboBox;
+    Label17: TLabel;
+    edt_jkzlcs: TEdit;
+    Label18: TLabel;
+    Label15: TLabel;
+    edt_cf: TEdit;
+    sb_zlxmlb: TSpeedButton;
+    Label14: TLabel;
+    Label21: TLabel;
+    edt_jksfje: TEdit;
+    q_zdhis: TADOQuery;
+    ds_zdhis: TDataSource;
+    lab_zdid: TLabel;
     procedure FormShow(Sender: TObject);
-    procedure Image2Click(Sender: TObject);
-    procedure Image3Click(Sender: TObject);
-    procedure Image4Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
     procedure bbt_dwClick(Sender: TObject);
     procedure edt_jkzyhKeyPress(Sender: TObject; var Key: Char);
@@ -383,7 +387,6 @@ type
     procedure edt_dxmmcKeyPress(Sender: TObject; var Key: Char);
     procedure N7Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure Image5Click(Sender: TObject);
     procedure ts_xgjbxxShow(Sender: TObject);
     procedure edt_xgbrbhKeyPress(Sender: TObject; var Key: Char);
     procedure btn_xgjbxxClick(Sender: TObject);
@@ -398,7 +401,13 @@ type
       Item: TdxSideBarItem);
     procedure FormResize(Sender: TObject);
     procedure bbtn_cfkjClick(Sender: TObject);
+    procedure bbtn_savezldClick(Sender: TObject);
+    procedure SideBarStoreItem5Click(Sender: TObject;
+      Item: TdxSideBarItem);
+    procedure grd_zdhisCellClick(Column: TColumn);
+    procedure bbtn_newzldClick(Sender: TObject);
   private
+    cfxz_bz,lscfxz_bz:integer;   //处方新增标志（0:未点击过新增,1:点击过新增按钮)；历史处方选择标志（0：未选择，1：选择).
 //    procedure init_zl_face(Sender: TObject);//初始化治疗界面
 //    procedure init_jk_face(Sender: TObject);//初始化建卡界面
 //    procedure init_cx_face(Sender: TObject);//初始化查询界面
@@ -414,6 +423,10 @@ type
     procedure sclszljl(zdid:integer);//删除保存过但是没有治疗的处方项目对应的治疗流水记录
     procedure wczlhsxjm(brbh:string);//完成治疗后刷新界面
     procedure show_hz_zlxx(bh:string;name:string;sex:string);  //进入治疗界面显示患者的治疗信息。
+    procedure show_zhenduan_history(jkbh:string);     //显示指定患者的诊断历史
+    procedure clear_grid_content;//清除处方grid中的内容
+    procedure show_yzpc;  //显示医嘱频次；
+    procedure show_yslb; //显示医生列表；
   public
     { Public declarations }
 end;
@@ -452,8 +465,8 @@ begin
     qf.Parameters.ParamByName('je').Value :=xmje;
     qf.parameters.parambyname('aid').value :=zdid;
     qf.Open;
-    if qf.RecordCount >0 then continue;
-    qf.Close;
+    if qf.RecordCount >0 then continue;     //当有相同处方明细记录的时候 跳过
+    qf.Close;     //不同的时候插
     qf.sql.Clear;
     qf.SQL.add('insert into kf_brcfmxk (zdid,xmid,xmmc,xmdw,xmdj,xmsl,sfje,jlzt) values(:zdid,:xmid,:xmmc,:xmdw,:xmdj,:xmsl,:sfje,:jlzt)');
     qf.Parameters.ParamByName('zdid').Value :=zdid;
@@ -661,13 +674,14 @@ begin
   edt_jkzz.Clear;
   mem_jkzd.Clear;
   //mem_jkcf.Clear;
-  cbb_jkzlpc.Text :='QD';
+ { cbb_jkzlpc.Text :='QD';
   edt_jkzlcs.Clear;
   dtp_jkzdrq.Date :=now;
   cbb_jkzdys.Clear;
   edt_jksfje.Text :='0';
   mem_yp.Lines.Clear;
   xscfmxt;
+  }
 end;
 
 procedure Tfrm_main.sczlmx(zdid:integer);
@@ -819,6 +833,25 @@ begin
   bbt_dw.Click;
 end;
 
+procedure Tfrm_main.show_zhenduan_history(jkbh:string);
+begin
+  q_zdhis.Close;
+  q_zdhis.SQL.Clear;
+  q_zdhis.SQL.Add('select convert(varchar(10),zdrq,112) as rq,* from kf_brzdk where brid='+jkbh);
+  q_zdhis.Open;
+  grd_zdhis.Columns[0].FieldName :='rq';
+  grd_zdhis.Columns[1].FieldName :='zdr';
+  grd_zdhis.Columns[2].FieldName :='sfje';
+  grd_zdhis.Columns[0].Width :=80;
+  grd_zdhis.Columns[1].Width :=80;
+  grd_zdhis.Columns[2].Width :=80;
+end;
+
+procedure Tfrm_main.clear_grid_content;
+begin
+  sg_cf.RowCount :=1;
+end;
+
 procedure Tfrm_main.FormShow(Sender: TObject);
 begin
   frm_main.Left :=0;
@@ -832,17 +865,26 @@ begin
   xscfmxt;//显示处方明细头
 end;
 
-procedure Tfrm_main.Image2Click(Sender: TObject);
+procedure Tfrm_main.SideBarStoreItem2Click(Sender: TObject;
+  Item: TdxSideBarItem);
 begin
-//显示建卡界面
+ //建卡功能显示
   nb.activepage :='jk';
-  bbt_xzbr.Click;
+  //bbt_xzbr.Click;
   tishi.Caption :='';
 end;
 
-procedure Tfrm_main.Image3Click(Sender: TObject);
+procedure Tfrm_main.SideBarStoreItem5Click(Sender: TObject;
+  Item: TdxSideBarItem);
 begin
-//显示治疗界面
+//显示处方界面
+  bbtn_cfkj.Click;
+end;
+
+procedure Tfrm_main.SideBarStoreItem1Click(Sender: TObject;
+  Item: TdxSideBarItem);
+begin
+//治疗功能选择
   nb.activepage :='zl';
   clear_zl_face(sender);
   tishi.Caption :='';
@@ -851,12 +893,12 @@ begin
   q_lb.sql.add('select a.*,b.xm  from kf_brzdk a join kf_brxxk b on a.brid=b.brid where a.sfjs=1 order by a.zdid ');
   q_lb.Prepared :=true;
   q_lb.Open;
-
 end;
 
-procedure Tfrm_main.Image4Click(Sender: TObject);
+procedure Tfrm_main.SideBarStoreItem3Click(Sender: TObject;
+  Item: TdxSideBarItem);
 begin
-//显示查询界面
+  //查询功能选择
   nb.activepage :='cx';
   tishi.Caption :='';
   pp_View.Reset;
@@ -867,17 +909,15 @@ begin
   pagecontrol1.ActivePageIndex :=0;
   datetimepicker1.Date :=now-1;
   datetimepicker2.date :=now;
-
 end;
 
-procedure Tfrm_main.Image5Click(Sender: TObject);
+procedure Tfrm_main.SideBarStoreItem4Click(Sender: TObject;
+  Item: TdxSideBarItem);
 begin
-//显示其他界面
+  //其它功能选择
   nb.ActivePage :='qt';
   tishi.Caption :='';
   pp_view.Reset;
-  //....
-
 end;
 
 procedure Tfrm_main.BitBtn4Click(Sender: TObject);
@@ -916,11 +956,11 @@ begin
     label53.Caption :='label53';
     exit;
   end;
-  if qf.RecordCount >1 then
-  begin
-    messagebox(self.Handle,'条件太宽泛，找到的病人记录不止一条！','治疗',MB_ICONERROR);
-    exit;
-  end;
+//  if qf.RecordCount >1 then
+//  begin
+//    messagebox(self.Handle,'条件太宽泛，找到的病人记录不止一条！','治疗',MB_ICONERROR);
+//    exit;
+//  end;
 //  brid:=qf.fieldbyname('brid').AsInteger;
   zdid:=qf.fieldbyname('zdid').AsInteger;
   zlcs:=qf.fieldbyname('zlcs').AsInteger;
@@ -968,9 +1008,10 @@ begin
      lbrlx.Caption :='';
      zlblh:=trim(edt_jkzyh.text);
      if zlblh='' then exit;
+     edt_brbh.Text :='';
     key:=#0;
     zd:=0;
-    if rb_zyh.Checked then
+    if rb_zyh.Checked then  //先检索住院病人
     begin
       qcsey.Close;
       qcsey.SQL.clear;
@@ -988,7 +1029,7 @@ begin
       end
       else zd:=zd+1;
     end;
-    if rb_mzh.Checked then
+    if rb_mzh.Checked then     //检索门诊病人
     begin
       qcsey.Close;
       qcsey.SQL.clear;
@@ -1015,7 +1056,7 @@ begin
     begin
       qf.Close;
       qf.sql.clear;
-      qf.sql.add('select dz,dw from kf_brxxk where xm=:axm and xb=:axb and nl=:anl');
+      qf.sql.add('select brid,dz,dw from kf_brxxk where xm=:axm and xb=:axb and nl=:anl');
       qf.Parameters.ParamByName('axm').value :=trim(edt_jkxm.Text);
       qf.Parameters.ParamByName('axb').value :=trim(cbb_jkxb.Text);
       qf.Parameters.ParamByName('anl').value :=trim(edt_jknl.Text);
@@ -1024,6 +1065,7 @@ begin
       begin
         edt_jkdw.Text :=trim(qf.fieldbyname('dw').AsString);
         edt_jkzz.Text :=trim(qf.fieldbyname('dz').AsString);
+        edt_brbh.text :=trim(inttostr(qf.fieldbyname('brid').asinteger));
       end;
     end;
   end;
@@ -1087,7 +1129,7 @@ begin
   if key=#13 then
   begin
     key:=#0;
-    mem_jkzd.SetFocus;
+    bbt_bcbr.SetFocus;
   end;
 end;
 
@@ -1156,12 +1198,11 @@ begin
   end;
 end;
 
+
 procedure Tfrm_main.bbt_bcbrClick(Sender: TObject);
 var
-  zyh,bh,xm,xb,nl,dz,dw,zdzz,yp,zdr,czy,zlpcs,mzlx:string;
-  zlcs,brid,zdid,cfjls:integer; //cfjls处方记录数
-  sfje,zlpc:double;
-  zdrq:Tdatetime;
+  zyh,bh,xm,xb,nl,dz,dw,zdzz:string;
+  brid:integer;
 begin
 //保存记录到数据库中,然后根据条件生成治疗单据
   bh:=trim(edt_jkbh.Text);
@@ -1177,8 +1218,7 @@ begin
   end;
   xm:=trim(edt_jkxm.Text);
   xb:=trim(cbb_jkxb.Text);
-  cfjls:=sg_cf.RowCount ;//cfjls>1
-  if ((xm='')or(xb='')or(bh='')or(cfjls<=1)) then
+  if ((xm='')or(xb='')or(bh='')) then
   begin
     messagebox(self.Handle,'病人编号，姓名，性别，处方必须填写！','建卡',MB_ICONERROR );
     exit;
@@ -1188,13 +1228,6 @@ begin
   dz:=trim(edt_jkzz.Text);
   dw:=trim(edt_jkdw.Text);
   zdzz:=trim(mem_jkzd.Text);
-  yp:=trim(mem_yp.Text);
-  zdr:=trim(cbb_jkzdys.Text);
-  czy:=trim(frm_dl.edt_zgxm.Text);
-  zlpcs:=trim(cbb_jkzlpc.Text);
-  zlcs:=strtoint(trim(edt_jkzlcs.Text));
-  sfje:=strtofloat(trim(edt_jksfje.Text));
-  zdrq:=dtp_jkzdrq.Date;
   //建立病人基本信息
   qf.Close;
   qf.SQL.clear;
@@ -1206,7 +1239,7 @@ begin
   if qf.RecordCount >=1 then
   begin
     edt_brbh.Text :=inttostr(qf.fieldbyname('brid').AsInteger );
-    brid:=qf.fieldbyname('brid').asinteger;
+    //brid:=qf.fieldbyname('brid').asinteger;
   end
   else
   begin
@@ -1229,86 +1262,14 @@ begin
     qf.ExecSQL;
     edt_brbh.Text :=inttostr(brid);
   end;
-  
-  qf.Close;
-  qf.sql.clear;
-  qf.sql.add('select bh,zdid from kf_brzdk where bh=:abh');
-  qf.Parameters.ParamByName('abh').Value :=bh;
-  qf.Open;
-  if qf.RecordCount >0 then
-  begin
-    zdid :=qf.fieldbyname('zdid').AsInteger;
-    //保存病人处方信息
-    gridtosql(zdid);
-    //生成治疗流水记录
-    sczlmx(zdid);
-    //删除保存过但是没有治疗的处方项目对应的治疗流水记录
-    sclszljl(zdid);
-    //added by fwq 2004.6.24 ---用来保存修改后的病人诊断信息 begin
-    qf.Close;
-    qf.sql.Clear;
-    qf.sql.add('update kf_brzdk set zdzz=:azz,cf=:acf,sfje=:aje where bh=:abh');
-    qf.Parameters.ParamByName('azz').Value :=zdzz;
-    qf.Parameters.ParamByName('acf').Value :=yp;
-    qf.Parameters.ParamByName('aje').Value :=sfje;
-    qf.Parameters.ParamByName('abh').Value :=bh;
-    qf.ExecSQL;
-    //added end
-
-    messagebox(self.Handle,'保存病人处方信息成功！','建卡',MB_ICONINFORMATION);
-    exit;
-  end;
-  qf.Close;
-  qf.SQL.clear;
-  qf.SQL.add('select zlpc from kf_zlpck where pcmc=:apcmc');
-  qf.Parameters.ParamByName('apcmc').Value :=zlpcs;
-  qf.Open;
-  if qf.RecordCount <=0 then
-  begin
-      messagebox(self.Handle,'请选择治疗频次，或治疗频次设置不正确！','建卡',MB_ICONERROR );
-      exit;
-  end;
-  zlpc:=qf.fieldbyname('zlpc').AsFloat;
-  qf.Close;
-  qf.SQL.Clear;
-  qf.sql.add('select max(zdid+1) as mzdid from kf_brzdk');
-  qf.Prepared :=true;
-  qf.Open;
-  zdid :=qf.fieldbyname('mzdid').AsInteger;
-  //保存病人诊断信息
-  mzlx :='';
-  if rb_mzh.Checked  then mzlx:='m';
-  if rb_zyh.Checked then mzlx:='z';
-  qf.Close;
-  qf.SQL.clear;
-  qf.sql.add('insert into kf_brzdk values'+
-  '(:zdid,:brid,:zyh,:bh,:zdrq,:zdzz,:cf,:zdr,:zlcs,:zlbz,:sfje,:czy,:sfjs,:dqcs,:zlpc,:mzlx)');
-  qf.Parameters.ParamByName('zdid').Value :=zdid;
-  qf.Parameters.ParamByName('brid').Value :=brid;
-  qf.Parameters.ParamByName('zyh').Value :=zyh;
-  qf.Parameters.ParamByName('bh').Value :=bh;
-  qf.Parameters.ParamByName('zdrq').Value :=zdrq;
-  qf.Parameters.ParamByName('zdzz').Value :=zdzz;
-  qf.Parameters.ParamByName('cf').Value :=yp;
-  qf.Parameters.ParamByName('zdr').Value :=zdr;
-  qf.Parameters.ParamByName('zlcs').Value :=zlcs;
-  qf.Parameters.ParamByName('zlbz').Value :='';
-  qf.Parameters.ParamByName('sfje').Value :=sfje;
-  qf.Parameters.ParamByName('czy').Value :=czy;
-  qf.Parameters.ParamByName('sfjs').Value :=1;//没有结束
-  qf.Parameters.ParamByName('dqcs').Value :=1;
-  qf.Parameters.ParamByName('zlpc').Value :=zlpc;
-  qf.Parameters.ParamByName('mzlx').Value :=mzlx;
-  qf.Prepared :=true;
-  qf.ExecSQL;
-  //保存病人处方信息
-  gridtosql(zdid);
-  //生成治疗流水记录
-  sczlmx(zdid);
-  messagebox(self.Handle,'保存病人信息成功！','建卡',MB_ICONINFORMATION);
 end;
 
 procedure Tfrm_main.cbb_jkzlpcEnter(Sender: TObject);
+begin
+  show_yzpc;
+end;
+
+procedure Tfrm_main.show_yzpc;
 begin
   qf.Close;
   qf.sql.Clear;
@@ -1324,6 +1285,11 @@ begin
 end;
 
 procedure Tfrm_main.cbb_jkzdysEnter(Sender: TObject);
+begin
+  show_yslb;
+end;
+
+procedure Tfrm_main.show_yslb;
 begin
   qf.Close;
   qf.sql.Clear;
@@ -1368,38 +1334,38 @@ end;
 
 procedure Tfrm_main.bbt_dyzlClick(Sender: TObject);
 var
-  bh,dlry:string;
+  zdid,dlry:string;
   ds_cf:tdatasource;
   q_cf:tadoquery;
 begin
 //打印病人治疗单
 
-  bh:=trim(edt_jkbh.Text);
-  if bh='' then exit;
+  zdid:=trim(lab_zdid.Caption);
+  if zdid='null' then exit;
   ds_cf:=tdatasource.Create(self);
   q_cf :=tadoquery.Create(self);
   q_cf.Connection :=dm.adocon;
   ds_cf.DataSet :=q_cf;
   q_cf.Close;
   q_cf.SQL.clear;
-  q_cf.SQL.Add('select a.jlzt, left(a.xmmc,10) as xmmc,a.xmsl from kf_brcfmxk a,kf_brzdk b where a.zdid=b.zdid and b.bh=:abh');
-  q_cf.Parameters.ParamByName('abh').Value :=bh;
+  q_cf.SQL.Add('select a.jlzt, left(a.xmmc,10) as xmmc,a.xmsl from kf_brcfmxk a,kf_brzdk b where a.zdid=b.zdid and b.zdid=:azdid');
+  q_cf.Parameters.ParamByName('azdid').Value :=zdid;
   q_cf.Open;
   ppline_cf.DataSource :=ds_cf;
   
   qp.Close;
   qp.SQL.clear;
   qp.SQL.add('select a.xm,a.xb,a.nl,a.dz,a.dw,b.zyh,b.bh,b.zdrq,b.zdzz,b.cf,b.zdr,b.zlcs,'+
-  'b.sfje from kf_brxxk a join kf_brzdk b on a.brid=b.brid where b.bh=:abh');
-  qp.Parameters.parambyname('abh').Value :=bh;
+  'b.sfje from kf_brxxk a join kf_brzdk b on a.brid=b.brid where b.zdid=:azdid');
+  qp.Parameters.parambyname('azdid').Value :=zdid;
   qp.Prepared :=true;
   qp.Open;
   qf.Close;
   qf.SQL.clear;
   qf.sql.add('select a.jhrq,a.djc,b.cf,b.bh,c.xm from kf_zllsk a'+
   ' join kf_brzdk b on a.brid=b.zdid join kf_brxxk c on b.brid=c.brid'+
-  ' where b.bh=:abh and a.wcbz=0 order by a.lsid');
-  qf.Parameters.ParamByName('abh').Value :=bh;
+  ' where b.zdid=:azdid and a.wcbz=0 order by a.lsid');
+  qf.Parameters.ParamByName('azdid').Value :=zdid;
   qf.Prepared :=true;
   qf.Open;
   dlry:=trim(frm_dl.edt_zgdm.Text);
@@ -1442,6 +1408,7 @@ var
 begin
   bh:=trim(q_lb.fieldbyname('bh').AsString);
   zyh:=trim(q_lb.fieldbyname('zyh').asstring);
+  zdid:=q_lb.fieldbyname('zdid').AsInteger;
   edt_zlzyh.Text :=zyh;
   edt_zlbh.Text :=bh;
 //  bbt_dw.Click;
@@ -1449,11 +1416,10 @@ begin
   gb.Items.Clear;
   qf.Close;
   qf.SQL.clear;
-  qf.SQL.Add('select * from kf_brzdk where bh=:abh');
-  qf.parameters.ParamByName('abh').Value :=bh;
+  qf.SQL.Add('select * from kf_brzdk where zdid=:azdid');
+  qf.parameters.ParamByName('azdid').Value :=zdid;
   qf.Prepared :=true;
   qf.Open;
-  zdid:=qf.fieldbyname('zdid').AsInteger;
   zlcs:=qf.fieldbyname('zlcs').AsInteger;
   sfjs:=qf.FieldByName('sfjs').AsInteger;
   label53.Caption  :=inttostr(zdid);
@@ -2269,6 +2235,7 @@ procedure Tfrm_main.FormCreate(Sender: TObject);
 begin
   frm_main.Top :=0;
   frm_main.Left :=0;
+  cfxz_bz:=0;
 end;
 //MessageDlg('这是由Gexpert生成测试用的提示！', mtWarning, [mbOK], 0);
 
@@ -2369,53 +2336,7 @@ begin
 //application.Terminate;
 end;
 
-procedure Tfrm_main.SideBarStoreItem2Click(Sender: TObject;
-  Item: TdxSideBarItem);
-begin
- //建卡功能显示
-  nb.activepage :='jk';
-  bbt_xzbr.Click;
-  tishi.Caption :='';
-end;
 
-procedure Tfrm_main.SideBarStoreItem1Click(Sender: TObject;
-  Item: TdxSideBarItem);
-begin
-//治疗功能选择
-  nb.activepage :='zl';
-  clear_zl_face(sender);
-  tishi.Caption :='';
-  q_lb.Close;
-  q_lb.SQL.clear;
-  q_lb.sql.add('select a.*,b.xm  from kf_brzdk a join kf_brxxk b on a.brid=b.brid where a.sfjs=1 order by a.zdid ');
-  q_lb.Prepared :=true;
-  q_lb.Open;
-end;
-
-procedure Tfrm_main.SideBarStoreItem3Click(Sender: TObject;
-  Item: TdxSideBarItem);
-begin
-  //查询功能选择
-  nb.activepage :='cx';
-  tishi.Caption :='';
-  pp_View.Reset;
-  pprpt.CloseDataPipelines;
-  ppline.Close;
-  ppline.CloseDataSource :=true;
-  ppdsg.Close;
-  pagecontrol1.ActivePageIndex :=0;
-  datetimepicker1.Date :=now-1;
-  datetimepicker2.date :=now;
-end;
-
-procedure Tfrm_main.SideBarStoreItem4Click(Sender: TObject;
-  Item: TdxSideBarItem);
-begin
-  //其它功能选择
-  nb.ActivePage :='qt';
-  tishi.Caption :='';
-  pp_view.Reset;
-end;
 
 procedure Tfrm_main.FormResize(Sender: TObject);
 begin
@@ -2426,12 +2347,25 @@ begin
 end;
 
 procedure Tfrm_main.bbtn_cfkjClick(Sender: TObject);
+var
+  jkbh:string;
 begin
-  if (trim(edt_jkbh.Text)<>'') and (trim(edt_jkxm.Text)<>'') then
-    nb.ActivePage :='cf'
+  jkbh:=trim(edt_brbh.Text);
+  if (jkbh<>'') and (trim(edt_jkxm.Text)<>'') then
+  begin
+    show_hz_zlxx(jkbh,trim(edt_jkxm.Text),trim(cbb_jkxb.Text));
+    nb.ActivePage :='cf';
+    show_zhenduan_history(jkbh);
+    show_yslb;
+    show_yzpc;
+    dtp_jkzdrq.DateTime :=now;
+    cfxz_bz:=0;     //置处方新增标志为否
+    lscfxz_bz:=0;    //置历史处方选择标志为否
+    lab_zdid.Caption :='null';
+  end
   else
   begin
-    messagebox(self.handle,'请选择或新建患者基本信息！','编辑',mb_iconerror);
+    messagebox(self.handle,'请在建卡界面选择或新建患者！','编辑',mb_iconerror);
     exit;
   end;
 end;
@@ -2443,6 +2377,181 @@ begin
    lab_name.caption:=name;
    lab_sex.caption :=sex;
    //显示患者的历次治疗信息
+end;
+
+procedure Tfrm_main.bbtn_savezldClick(Sender: TObject);
+var
+  yp,zdr,czy,zlpcs,mzlx,bh,zdzz,zyh:string;
+  zlcs,brid,zdid,cfjls:integer; //cfjls处方记录数
+  sfje,zlpc:double;
+  zdrq:Tdatetime;
+  xz_or_fg:integer;//新增或者修改  0：覆盖 1：新增
+begin
+//保存或更新治疗单
+
+{需要有个逻辑   lscfxz_bz历史处方选择标志  cfxz_bz处方新增标志
+当选择过历史记录的时候，没有处方新增的情况，直接覆盖，
+当选择过历史记录的时候，需要处方新增的情况，那么新增
+当没有选择过历史记录的时候，直接新增
+}
+  if lscfxz_bz=1 then
+  begin
+    if cfxz_bz=0 then
+    begin
+      xz_or_fg:=0;
+    end
+    else xz_or_fg:=1;
+  end
+  else
+  begin
+    xz_or_fg:=1;
+  end;
+  bh:=trim(lab_bh.Caption);
+  if bh='' then exit;
+  yp:=trim(mem_yp.Text);
+  zdr:=trim(cbb_jkzdys.Text);
+  czy:=trim(frm_dl.edt_zgxm.Text);
+  zlpcs:=trim(cbb_jkzlpc.Text);
+  zlcs:=strtoint(trim(edt_jkzlcs.Text));
+  sfje:=strtofloat(trim(edt_jksfje.Text));
+  zdrq:=dtp_jkzdrq.Date;
+  zdzz:=trim(mem_jkzd.lines.text);
+  zyh:=trim(edt_jkzyh.Text);
+  brid:=strtoint(edt_brbh.Text);
+  if xz_or_fg=0 then
+  begin
+    //覆盖保存病人处方信息
+      zdid :=q_zdhis.fieldbyname('zdid').AsInteger;
+      //保存病人处方信息
+      cfjls:=sg_cf.RowCount ;//cfjls>1
+      if cfjls>=1 then
+      gridtosql(zdid);
+      //生成治疗流水记录
+      sczlmx(zdid);
+      //删除保存过但是没有治疗的处方项目对应的治疗流水记录
+      //sclszljl(zdid);
+      //added by fwq 2004.6.24 ---用来保存修改后的病人诊断信息 begin
+      qf.Close;
+      qf.sql.Clear;
+      qf.sql.add('update kf_brzdk set zdzz=:azz,cf=:acf,sfje=:aje,zdrq=:azdrq,zdr=:azdr,zlcs=:azlcs where zdid=:azdid');
+      qf.Parameters.ParamByName('azz').Value :=zdzz;
+      qf.Parameters.ParamByName('acf').Value :=yp;
+      qf.Parameters.ParamByName('aje').Value :=sfje;
+      qf.Parameters.ParamByName('azdrq').Value :=zdrq;
+      qf.Parameters.ParamByName('azdr').Value :=zdr;
+      qf.Parameters.ParamByName('azlcs').Value :=zlcs;
+      qf.Parameters.ParamByName('azdid').Value :=zdid;
+      qf.ExecSQL;
+      //added end
+      show_zhenduan_history(inttostr(brid));
+      lab_zdid.Caption :=inttostr(zdid);
+      messagebox(self.Handle,'保存病人处方信息成功！','处方',MB_ICONINFORMATION);
+      exit;
+  end;
+  //下面是新增
+  qf.Close;
+  qf.SQL.clear;
+  qf.SQL.add('select zlpc from kf_zlpck where pcmc=:apcmc');
+  qf.Parameters.ParamByName('apcmc').Value :=zlpcs;
+  qf.Open;
+  if qf.RecordCount <=0 then
+  begin
+      messagebox(self.Handle,'请选择治疗频次，或治疗频次设置不正确！','建卡',MB_ICONERROR );
+      exit;
+  end;
+  zlpc:=qf.fieldbyname('zlpc').AsFloat;
+  qf.Close;
+  qf.SQL.Clear;
+  qf.sql.add('select max(zdid+1) as mzdid from kf_brzdk');
+  qf.Prepared :=true;
+  qf.Open;
+  zdid :=qf.fieldbyname('mzdid').AsInteger;
+  //保存病人诊断信息
+  mzlx :='';
+  if rb_mzh.Checked  then mzlx:='m';
+  if rb_zyh.Checked then mzlx:='z';
+  qf.Close;
+  qf.SQL.clear;
+  qf.sql.add('insert into kf_brzdk values'+
+  '(:zdid,:brid,:zyh,:bh,:zdrq,:zdzz,:cf,:zdr,:zlcs,:zlbz,:sfje,:czy,:sfjs,:dqcs,:zlpc,:mzlx)');
+  qf.Parameters.ParamByName('zdid').Value :=zdid;
+  qf.Parameters.ParamByName('brid').Value :=brid;
+  qf.Parameters.ParamByName('zyh').Value :=zyh;
+  qf.Parameters.ParamByName('bh').Value :=bh;
+  qf.Parameters.ParamByName('zdrq').Value :=zdrq;
+  qf.Parameters.ParamByName('zdzz').Value :=zdzz;
+  qf.Parameters.ParamByName('cf').Value :=yp;
+  qf.Parameters.ParamByName('zdr').Value :=zdr;
+  qf.Parameters.ParamByName('zlcs').Value :=zlcs;
+  qf.Parameters.ParamByName('zlbz').Value :='';
+  qf.Parameters.ParamByName('sfje').Value :=sfje;
+  qf.Parameters.ParamByName('czy').Value :=czy;
+  qf.Parameters.ParamByName('sfjs').Value :=1;//没有结束
+  qf.Parameters.ParamByName('dqcs').Value :=1;
+  qf.Parameters.ParamByName('zlpc').Value :=zlpc;
+  qf.Parameters.ParamByName('mzlx').Value :=mzlx;
+  qf.Prepared :=true;
+  qf.ExecSQL;
+  //保存病人处方信息
+  gridtosql(zdid);
+  //生成治疗流水记录
+  sczlmx(zdid);
+  show_zhenduan_history(inttostr(brid));
+  lscfxz_bz:=1;
+  cfxz_bz:=0;
+  lab_zdid.Caption :=inttostr(zdid);
+  messagebox(self.Handle,'保存病人处方成功！','处方',MB_ICONINFORMATION);
+end;
+
+procedure Tfrm_main.grd_zdhisCellClick(Column: TColumn);
+var
+  bh,zlpc:string;
+  mc,cs,dj,je,zdid:string;
+begin
+//显示本次治疗的明细内容，以及处方的明细内容。
+  if q_zdhis.State=dsinactive then exit;
+  clear_grid_content;
+  bh:=trim(lab_bh.Caption);
+  mem_jkzd.Text :=q_zdhis.fieldbyname('zdzz').AsString;
+  zlpc:=q_zdhis.fieldbyname('zlpc').asstring;
+  qf.Close;
+  qf.SQL.Clear;
+  qf.sql.Add('select pcmc from kf_zlpck where pcid='+zlpc);
+  qf.open;
+  cbb_jkzlpc.Text :=qf.fieldbyname('pcmc').AsString;
+  edt_jkzlcs.Text :=inttostr(q_zdhis.fieldbyname('zlcs').asinteger);
+  edt_jksfje.Text :=floattostr(q_zdhis.fieldbyname('sfje').AsFloat);
+  mem_yp.Text :=q_zdhis.fieldbyname('cf').AsString;
+  dtp_jkzdrq.DateTime :=q_zdhis.fieldbyname('zdrq').AsDateTime;
+  cbb_jkzdys.Text :=q_zdhis.fieldbyname('zdr').AsString;
+  zdid:=inttostr(q_zdhis.fieldbyname('zdid').asinteger);
+  qf.Close;
+  qf.SQL.Clear;
+  qf.SQL.add('select a.* from kf_brcfmxk a,kf_brzdk b where a.zdid=b.zdid and b.brid='+bh+' and b.zdid='+zdid);
+  qf.Open;
+  qf.First;
+  while not qf.Eof do
+  begin
+    mc:=qf.FieldByName('xmmc').AsString ;
+    cs:=inttostr(qf.FieldByName('xmsl').Asinteger);
+    dj:=floattostr(qf.FieldByName('xmdj').Asfloat) ;
+    je:=floattostr(qf.FieldByName('sfje').Asfloat);
+    strtogrid(mc,cs,dj,je);
+    qf.Next;
+  end;
+  lscfxz_bz:=1;//历史处方已经被单击过。
+  lab_zdid.Caption :=zdid;
+end;
+
+procedure Tfrm_main.bbtn_newzldClick(Sender: TObject);
+begin
+//新增加治疗单 （清除界面）
+  edt_jksfje.Text :='0';
+  sg_cf.RowCount :=1;
+  mem_yp.Lines.Clear;
+  dtp_jkzdrq.Datetime:=now;
+  cbb_jkzdys.Text :='';
+  cfxz_bz:=1;
 end;
 
 end.
